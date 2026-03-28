@@ -1,0 +1,1 @@
+# Luiza Labs + Dio - APIs assíncronas com FastAPI 
