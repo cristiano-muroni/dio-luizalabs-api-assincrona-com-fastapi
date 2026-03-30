@@ -1,8 +1,10 @@
-from fastapi import FastAPI, status
+from fastapi import FastAPI, Header, status, Response, Cookie
 
 from  datetime import datetime, UTC 
 
 from pydantic import BaseModel
+
+from typing import Annotated
 
 app = FastAPI()
 
@@ -24,7 +26,13 @@ def crate_post(post: Post):
     return post
 
 @app.get("/posts")
-def read_posts_pub(published: bool, limit: int, skip: int =0 ):
+def read_posts_pub(response: Response, published: bool, limit: int, skip: int =0,
+                   ads_id: Annotated[str | None, Cookie()] = None, 
+                   user_agent: Annotated[str | None, Header()] = None
+     ):
+    print(f"Cockie: {ads_id}")
+    print(f"Header: {user_agent}")
+    response.set_cookie(key="user", value="cris.teste@gmail.com")
     posts = []
     for post in fake_db:
         if len(posts) is limit:
