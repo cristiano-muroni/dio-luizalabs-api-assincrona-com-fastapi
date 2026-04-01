@@ -11,7 +11,7 @@ from schemas.post import PostIn
 from views.post import PostOut
 
 
-router = APIRouter()
+router = APIRouter(prefix="/posts")
 
 fake_db = [
     {"title": f"Criando uma aplicação com Django", "date": datetime.now(UTC),'published': True},
@@ -20,12 +20,12 @@ fake_db = [
     {"title": f"Hands-on de uma aplicação com Pandas", "date": datetime.now(UTC), 'published': False}
 ] # type: ignore
 
-@router.post("/posts", status_code=status.HTTP_201_CREATED, response_model=PostOut)
+@router.post("/", status_code=status.HTTP_201_CREATED, response_model=PostOut)
 def crate_post(post: PostIn):
     fake_db.append(post.model_dump())
     return post
 
-@router.get("/posts",response_model=list[PostOut])
+@router.get("/",response_model=list[PostOut])
 def read_posts_pub(
     response: Response,
     published: bool,
@@ -45,7 +45,7 @@ def read_posts_pub(
             posts.append(post)
     return posts # [post for post in fake_db[skip: skip + limit] if post['published'] is published]
 
-@router.get("/posts/{framework}", response_model=PostOut)
+@router.get("/{framework}", response_model=PostOut)
 def read_posts(framework: int):
     return {"posts": [
         {"title": f"Criando uma aplicação com {framework}", "date": datetime.now(UTC)},
