@@ -11,7 +11,12 @@ Uma API assíncrona para gerenciamento de posts de blog, desenvolvida com **Fast
 ---
 
 ## 🛠️ Tecnologias e Versões
-### Python - FastAPI - SQlite3 - JWT
+<p align="left">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1280px-Python-logo-notext.svg.png" alt="Python">
+  <img src="https://avatars.githubusercontent.com/u/156354296?s=280&v=4" alt="FastAPI">
+  <img src="https://avatars.githubusercontent.com/u/48722593?s=200&v=4" alt="Poetry">
+  <img src="https://avatars.githubusercontent.com/u/48680494?v=4" alt="SQLite">
+</p>
 ---
 
 ## ⚙️ Instalação e Configuração
