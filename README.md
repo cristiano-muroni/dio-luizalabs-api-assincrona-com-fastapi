@@ -44,7 +44,7 @@ Use a rota /auth/login para obter seu access_token.
 No Swagger (/docs), clique no botão Authorize.
 
 📁 Estrutura do Código
-
+```text
 dio-blog/
 ├── main.py            # Ponto de entrada e Lifespan
 ├── database.py        # Conexão assíncrona e Metadata
@@ -54,6 +54,7 @@ dio-blog/
 ├── views/             # Modelos de Resposta (Saída)
 ├── services/          # Regras de negócio (CRUD)
 └── controllers/       # Endpoints da API
+```
 
 
 
