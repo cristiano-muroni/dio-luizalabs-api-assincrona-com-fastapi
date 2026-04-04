@@ -13,5 +13,7 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 
+*.db
+
 # Variáveis de Ambiente (Segurança!)
 .env
