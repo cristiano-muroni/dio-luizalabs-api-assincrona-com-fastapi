@@ -3,6 +3,7 @@ from databases.interfaces import Record
 from fastapi import HTTPException, status
 from models.post  import posts
 from schemas.post import PostIn, PostUpdateIn
+import sqlite3
 
 
 class PostService:
@@ -12,14 +13,22 @@ class PostService:
 
 
 
-    async def create(self, post: PostIn) -> int:
-        command = posts.insert().values(
-            title=post.title,
-            content=post.content,
-            published_at=post.published_at,
-            published=post.published,
-        )
-        return await database.execute(command)
+    async def create(self, post: PostIn) -> int:        
+        
+        try:
+            command = posts.insert().values(
+                    title=post.title,
+                    content=post.content,
+                    published_at=post.published_at,
+                    published=post.published,
+                )    
+            return await database.execute(command)
+        except sqlite3.IntegrityError:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Já existe um post com esse título.",
+            )
+            
 
 
     async def read(self, id: int) -> Record:
@@ -38,7 +47,7 @@ class PostService:
 
     async def delete(self, id: int) -> None:
         command = posts.delete().where(posts.c.id == id)
-        return database.execute(command)
+        return await database.execute(command)
 
     async def count(self, id: int) -> int:
         query = "select count(id) as total from posts where id = :id"

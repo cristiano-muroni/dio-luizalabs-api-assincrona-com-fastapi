@@ -14,8 +14,7 @@ async def read_posts(published: bool, limit: int, skip: int = 0):
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=PostOut)
 async def create_post(post: PostIn):
-    new_id = await service.create(post)
-    print(new_id)
+    new_id = await service.create(post)    
     return {**post.model_dump(), "id": new_id}
 
 @router.get("/{id}", response_model=PostOut)
