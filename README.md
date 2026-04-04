@@ -18,7 +18,7 @@ Uma API assíncrona para gerenciamento de posts de blog, desenvolvida com **Fast
   &nbsp;&nbsp;
   <img src="https://avatars.githubusercontent.com/u/48722593?s=200&v=4" alt="Poetry" height="70">
   &nbsp;&nbsp;
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYgKRIQVJKBIb7E_xXvu49YoGeZNb_88ImEQ&s" alt="SQLite" height="70">
+  <img src="https://www.sqlite.org/images/sqlite370_banner.svg" alt="SQLite" height="70">
 </p>
 ---
 
