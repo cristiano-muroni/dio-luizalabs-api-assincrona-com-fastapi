@@ -12,13 +12,13 @@ Uma API assíncrona para gerenciamento de posts de blog, desenvolvida com **Fast
 
 ## 🛠️ Tecnologias e Versões
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1280px-Python-logo-notext.svg.png" alt="Python" height="50">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1280px-Python-logo-notext.svg.png" alt="Python" height="70">
   &nbsp;&nbsp;
-  <img src="https://avatars.githubusercontent.com/u/156354296?s=280&v=4" alt="FastAPI" height="50">
+  <img src="https://avatars.githubusercontent.com/u/156354296?s=280&v=4" alt="FastAPI" height="70">
   &nbsp;&nbsp;
-  <img src="https://avatars.githubusercontent.com/u/48722593?s=200&v=4" alt="Poetry" height="50">
+  <img src="https://avatars.githubusercontent.com/u/48722593?s=200&v=4" alt="Poetry" height="70">
   &nbsp;&nbsp;
-  <img src="https://avatars.githubusercontent.com/u/48680494?v=4" alt="SQLite" height="50">
+  <img src="https://avatars.githubusercontent.com/u/48680494?v=4" alt="SQLite" height="70">
 </p>
 ---
 
