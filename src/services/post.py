@@ -1,9 +1,9 @@
-from database import database
 from databases.interfaces import Record
 from fastapi import HTTPException, status
+import sqlite3
+from src.database import database
 from src.models.post  import posts
 from src.schemas.post import PostIn, PostUpdateIn
-import sqlite3
 
 
 class PostService:
