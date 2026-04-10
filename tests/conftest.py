@@ -4,6 +4,7 @@ import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
 
 from src.config import settings
+from src.security import sign_jwt
 
 settings.database_url = "sqlite:///tests.db"
 
@@ -43,5 +44,6 @@ async def client(db):
 
 @pytest_asyncio.fixture
 async def access_token(client: AsyncClient):
-    response = await client.post("/auth/login", json={"user_id": 1})
-    return response.json()["access_token"]
+    #response = await client.post("/auth/login", json={"user_id": 1})
+    token_data = sign_jwt(user_id=1) 
+    return token_data["access_token"] #response.json()["access_token"]
